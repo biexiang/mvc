@@ -3,6 +3,7 @@
 class Db{
     protected $arrConfig;
     protected $conn = null;
+    protected $where;
 
     /**
      * @param $arrConfig 数据库配置信息
@@ -42,6 +43,27 @@ class Db{
         }catch (PDOException $e){
             echo $e->getMessage();
         }
+    }
+
+
+    public function select($table,$where = array()){
+        $sql = "select * from {$where} ";
+        $sql .= $this->where;
+        MYECHO($sql);
+        return $this->queryString($sql,$where);
+    }
+
+    public function insert($table,$arrData){
+        $sql = "insert into {$table}";
+        $key = $value = "";
+        foreach ($arrData as $k=>$v){
+            $key .= $k . ",";
+            $value .= "'" . $v . "',";
+        }
+
+        $sql = $sql . "(" . rtrim($key,",") . ")" . " values(" . rtrim($value,",") . ")";
+        //MYECHO($sql);
+        return $this->queryString($sql);
     }
 
 

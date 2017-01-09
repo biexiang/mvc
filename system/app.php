@@ -9,6 +9,7 @@ define("APP_CTRL_PATH",APP_PATH . "controller/");
 define("APP_MODEL_PATH",APP_PATH . "model/");
 define("APP_VIEW_PATH",APP_PATH . "view/");
 define("APP_LIB_PATH",APP_PATH . "lib/");
+define("APP_ENTITY_PATH",APP_PATH . "entity/");
 
 
 final class APP{

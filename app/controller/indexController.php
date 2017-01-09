@@ -1,5 +1,6 @@
 <?php
 
+//require APP_MODEL_PATH . "testModel.php";
 
 
 class IndexController extends Controller {
@@ -30,9 +31,20 @@ class IndexController extends Controller {
     }
 
     public function model(){
-        include APP_MODEL_PATH . "testModel.php";
+
         $m = new testModel();
         $m->test();
+        $u = new User();
+        $u->say();
+
+        /*$t =  new \app\model\testModel();*/
+
+
+
+
+
+
+
     }
 
 
